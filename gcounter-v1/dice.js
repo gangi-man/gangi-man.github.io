@@ -1,4 +1,3 @@
-myobj = [];
 function make_dice_counter(){
     var Dice_arr = null;
     var Master_value = 0;
@@ -22,7 +21,6 @@ function make_dice_counter(){
 		    dice_line = ln;
 		    ln = ln.replace(/<font/i, '<span class="faces"><font');
 		    ln = ln.replace(/<\/font>/i, '</font></span>');
-		    //console.log(ln);
 		}
 		new_text_arr.push(ln);
 	    }
@@ -31,8 +29,6 @@ function make_dice_counter(){
 	    return;
 
 	bloq_element.innerHTML = new_text_arr.join("<br>");
-	myobj.push(bloq_element);
-	
 
 	var dice_reg = RegExp(/dice(\d+)d(\d+)([-+]\d+)?=/i);
 	var dice_match = dice_reg.exec(dice_line);
@@ -54,7 +50,7 @@ function make_dice_counter(){
 
 	var face_match = /<font\s+color="#ff0000">\s*((\d+\s+)+)\((\d+)\)<\/font>/.exec(dice_line);
 	if (!face_match){
-	    console.log("---------" + id_no + "\n" + dice_line);
+	    console.log("---------something wrong ---" + id_no + "\n" + dice_line);
 	    return null;
 	}
 
@@ -125,18 +121,15 @@ function make_dice_counter(){
 
 	function gen_ginga_html(arr){
 	    var result = "";
-	    var Fsize = 'size="-2"';
-	    Fsize = "";
 	    arr.forEach(
 		function(e, i, ar){
 		    if (arr[i] == Ginga_model[i]){
-			result += '<font color="#191970" ' + Fsize + '>' + Ginga_dict_unicode[arr[i]] + '</font> ';
+			result += '<font color="#191970">' + Ginga_dict_unicode[arr[i]] + '</font> ';
 		    }else{
-			result += '<font color="#4682b4" ' + Fsize + '>' + Ginga_dict_unicode[arr[i]] + '</font> ';
+			result += '<font color="#4682b4">' + Ginga_dict_unicode[arr[i]] + '</font> ';
 		    }
 		}
 	    );
-	    //result += ' <font color="blue">(GP:' + calc_ginga_score(arr) + ')</font>';
 	    return result;
 	}
 	if (d.ginga_html)
