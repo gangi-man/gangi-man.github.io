@@ -18,8 +18,8 @@ function make_dice_counter(){
 	    function(ln, i, ar){
 		if (ln.match(/<font\s+color="#ff0000"\s*>/i)){
 		    dice_line = ln;
-		    ln = ln.replace(/<font/i, '<span class="faces"><font');
-		    ln = ln.replace(/<\/font>/i, '</font></span>');
+		    ln = ln.replace(/<font/i, "<span class=\"faces\"><font");
+		    ln = ln.replace(/<\/font>/i, "</font></span>");
 		}
 		new_text_arr.push(ln);
 	    }
@@ -90,14 +90,14 @@ function make_dice_counter(){
 
 	    //bonus!
 	    if (arr.length >= 4 &&
-		arr[0] == 'GA' && arr[1] == 'NN' && arr[2] == 'GA' && arr[3] == 'NN')
+		arr[0] == "GA" && arr[1] == "NN" && arr[2] == "GA" && arr[3] == "NN")
 		score += 4;
 
-	    if (arr.length >= 7 && arr[4] == 'GI' && arr[5] == 'GI' && arr[6] == 'NN')
+	    if (arr.length >= 7 && arr[4] == "GI" && arr[5] == "GI" && arr[6] == "NN")
 		score += 3;
 
-	    if (arr.length >= 12 && arr[7] == 'GI' && arr[8] == 'NN' && arr[9] == 'GA' &&
-		arr[10] == 'MA' && arr[11] == 'NN')
+	    if (arr.length >= 12 && arr[7] == "GI" && arr[8] == "NN" && arr[9] == "GA" &&
+		arr[10] == "MA" && arr[11] == "NN")
 		score += 5;
 	    
 	    return score;
@@ -108,9 +108,9 @@ function make_dice_counter(){
 	    arr.forEach(
 		function(e, i, ar){
 		    if (arr[i] == GINGA_MODEL[i]){
-			result += '<font color="#191970">' + GINGA_DICT_UNICODE[arr[i]] + '</font> ';
+			result += "<font color=\"#191970\">" + GINGA_DICT_UNICODE[arr[i]] + "</font> ";
 		    }else{
-			result += '<font color="#4682b4">' + GINGA_DICT_UNICODE[arr[i]] + '</font> ';
+			result += "<font color=\"#4682b4\">" + GINGA_DICT_UNICODE[arr[i]] + "</font> ";
 		    }
 		}
 	    );
@@ -119,9 +119,9 @@ function make_dice_counter(){
 	if (d.ginga_html)
 	    return;
 	
-	var GINGA_DICT = ['GA', 'NN', 'GI', 'MA', '**'];
-	var GINGA_DICT_UNICODE = {'GA' :'&#12460;', 'NN' : '&#12531;', 'GI' : '&#12462;', 'MA' : '&#12510;', '**' : '&#65290;'};
-	var GINGA_MODEL = ['GA', 'NN', 'GA', 'NN', 'GI', 'GI', 'NN', 'GI', 'NN', 'GA', 'MA', 'NN'];
+	var GINGA_DICT = ["GA", "NN", "GI", "MA", "**"];
+	var GINGA_DICT_UNICODE = {"GA" :"&#12460;", "NN" : "&#12531;", "GI" : "&#12462;", "MA" : "&#12510;", "**" : "&#65290;"};
+	var GINGA_MODEL = ["GA", "NN", "GA", "NN", "GI", "GI", "NN", "GI", "NN", "GA", "MA", "NN"];
 	var ginga_dict_idx = 0;
 	var num_arr = [];
 	var ginga_arr = [];
@@ -159,17 +159,17 @@ function make_dice_counter(){
 	    function(l, i, ar){
 		text += l;
 		if (l.match(/<font\s+color/i) && l.match(/"#ff0000"/i)){
-		    text += '<span class="ginga_descr">';
-		    text += '<br><span style="visibility:hidden;">'+ d.kind + '=</span>';
-		    text += '<span class="faces">' + d.ginga_html + '</span>';
-		    text += ' <font color="#4b0082">(GP:'+ d.ginga_score + ')</font></span>';
+		    text += "<span class=\"ginga_descr\">";
+		    text += "<br><span style=\"visibility:hidden;\">"+ d.kind + "=</span>";
+		    text += "<span class=\"faces\">" + d.ginga_html + "</span>";
+		    text += " <font color=\"#4b0082\">(GP:"+ d.ginga_score + ")</font></span>";
 		}
 		text += "<br>";
 	    }
 	);
 	d.bloq.innerHTML = text;
 
-	var fz = d.bloq.getElementsByClassName('faces');
+	var fz = d.bloq.getElementsByClassName("faces");
 	if (!_font_scale){
 	    var ratio = Math.floor(100*fz[0].offsetWidth / fz[1].offsetWidth);
 	    _font_scale = ratio + "%";
