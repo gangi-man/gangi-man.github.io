@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head><title> rpg dice 1.1 </title></head>
+<body>
+<a href="javascript:(function(){var%20sid='__rpg_dice_js__';if(!document.getElementById(sid)){var%20s=document.createElement('script');s.id=sid;s.src='https://gangi-man.github.io/rpg-dice-v1/rpg-dice.min.js';document.body.appendChild(s);}else{console.log('hasload');__rpg_dice_counter__();}})()">
+rpg dice v1.1</a><br>
+
+<h1> RPG dice ver1.1</h1>
+<h2>RPG dice とは</h2>
+RPG dice はふたば★ちゃんねるのdice機能支援のためのbookmarkletです。<br>
+スレッドを開始する際にルールを書いておくことで、ダイスの出目を見やすく整形します。
+
+<h2>導入方法</h2>
+ページ上部のrpg dice のリンクをブラウザのブックマークバーにドラッグ＆ドロップする事でブラウザにインストールします。<br>
+dice 機能を使ったふたばのスレッドでインストールしたbookmarkをクリックすることで使用します。
+<div><img src="install-rpg.png"></div>
+スレッド内に下記のルールがある場合、そのルールにしたがって出目を整形し表示します。<br>
+ルールは１レス目にある必要はなく、最初に見つかったルールが適用されます。
+
+<h2>ルールの設定 (基本)</h2>
+通常はスレッドを立てる時に１レス目として書き込むことになるかと思います。<br>
+ルールは次のフォーマットでダイス毎に設定します。
+
+<div><img src="dice-rule1.png"></div>
+例
+<pre>
+#1 ATK; #2 DEF; #3 INT;
+</pre>
+<div><img src="example1.png"></div>
+
+<h2>ルールの設定 (値の割り当て)</h2>
+以下のようにそれぞれの出目に特定の値を割り当てる事もできます。
+<div><img src="dice-rule2.png"></div>
+例
+<pre>
+#1 武器 1:弓 2:剣 3:銃 4:槍 5:盾;
+#2 色 1:桃 2:青 3:黄 4:赤 5:黒; 
+</pre>
+<div><img src="example2.png"></div>
+
+<h2>ルールの設定 (応用)</h2>
+ある出目に対してルールに設定された値がない場合、
+出目自身よりも大きな設定値の中で最小の物が採用されます。<br>
+#1 3:x 10:y; はdice1 が1-3 の時はx, 4-10 の時はy を使うことを意味します。
+<br>
+例
+<pre>
+#1 ATK; #2 DEF; #3 INT; #4 ALI 3:善 6:悪 10:中立;  
+</pre>
+<div><img src="example3.png"></div>
+
+<h2>注意</h2>
+ルールの中の空白は全て半角スペースです。<br>
+また値の割り当ての dice_value:out_value のコロン前後にスペースを入れてはいけません。<br>
+
+<h2>その他</h2>
+rpg-dice のソースは<a href="https://github.com/gangi-man/gangi-man.github.io">ここ</a>にあります。
+お友達にも教えてあげて下さいね。
+
+</body>
+</html>
