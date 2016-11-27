@@ -1,4 +1,5 @@
 function make_dice_counter(){
+    var VERSION = "1.1";
     var Dice_arr = null;
     var Master_value = 0;
 
@@ -314,6 +315,7 @@ function make_dice_counter(){
 
 	control.innerHTML += "<input id='input_ginga' size='8' value='" +Master_value + "'/>"
 	control.innerHTML += "<button id='opclBtn'>open/close</button>";
+	control.innerHTML += " ver:" + VERSION;
 	control.style.position = "fixed"
 	control.style.top = "0px";
 	
