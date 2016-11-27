@@ -5,7 +5,7 @@
 <a href="javascript:(function(){var s=document.createElement('script');s.src='https://gangi-man.github.io/rpg-dice-v1/rpg-dice.js';document.body.appendChild(s);})()">rpg dice v1.0</a><br>
 
 <h1> RPG dice ver1.0</h1>
-<h2>RPG dice ver1.0 とは</h2>
+<h2>RPG dice とは</h2>
 RPG dice はふたば★ちゃんねるのdice機能支援のためのbookmarkletです。<br>
 スレッドを開始する際にルールを書いておくことで、ダイスの出目を見やすく整形します。
 
@@ -13,9 +13,12 @@ RPG dice はふたば★ちゃんねるのdice機能支援のためのbookmarkle
 ページ上部のrpg dice のリンクをブラウザのブックマークバーにドラッグ＆ドロップする事でブラウザにインストールします。<br>
 dice 機能を使ったふたばのスレッドでインストールしたbookmarkをクリックすることで使用します。
 <div><img src="install-rpg.png"></div>
+スレッド内に下記のルールがある場合、そのルールにしたがって出目を整形し表示します。<br>
+ルールは１レス目にある必要はなく、最初に見つかったルールが適用されます。
 
 <h2>ルールの設定 (基本)</h2>
-ルールは次のフォーマットで設定します。
+通常はスレッドを立てる時に１レス目として書き込むことになるかと思います。<br>
+ルールは次のフォーマットでダイス毎に設定します。
 
 <div><img src="dice-rule1.png"></div>
 例
@@ -25,7 +28,7 @@ dice 機能を使ったふたばのスレッドでインストールしたbookma
 <div><img src="example1.png"></div>
 
 <h2>ルールの設定 (値の割り当て)</h2>
-以下のように出目に特定の値を割り当てる事もできます。
+以下のようにそれぞれの出目に特定の値を割り当てる事もできます。
 <div><img src="dice-rule2.png"></div>
 例
 <pre>
@@ -35,14 +38,19 @@ dice 機能を使ったふたばのスレッドでインストールしたbookma
 <div><img src="example2.png"></div>
 
 <h2>ルールの設定 (応用)</h2>
-値の割り当ては出目を超えない値が採用されます。<br>
-#1 3:x 10:y; ならばdice1 が1-3 の時はx, 4-10 の時はy が割り当てられることになります。
+ある出目に対してルールに設定された値がない場合、
+出目自身よりも大きな設定値の中で最小の物が採用されます。<br>
+#1 3:x 10:y; はdice1 が1-3 の時はx, 4-10 の時はy を使うことを意味します。
 <br>
 例
 <pre>
 #1 ATK; #2 DEF; #3 INT; #4 ALI 3:善 6:悪 10:中立;  
 </pre>
 <div><img src="example3.png"></div>
+
+<h2>注意</h2>
+ルールの中の空白は全て半角スペースです。<br>
+また値の割り当ての dice_value:out_value のコロン前後にスペースを入れてはいけません。<br>
 
 <h2>その他</h2>
 rpg-dice のソースは<a href="https://github.com/gangi-man/gangi-man.github.io">ここ</a>にあります。
