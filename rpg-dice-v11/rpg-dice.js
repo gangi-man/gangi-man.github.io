@@ -196,6 +196,7 @@ function make_rpg_dice_counter(){
 	var insHtml = apply_rule(_rule, d);
 	d.bloq.innerHTML += "<br>" + insHtml;
 	d.bloq.classList.add('__rpg_dice_descr__');
+	console.log(d.bloq.classList);
     }
 
     function move_form(){
