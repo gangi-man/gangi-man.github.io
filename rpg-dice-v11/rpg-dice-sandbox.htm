@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title> rpg dice sandbox </title>
+
+    <script type="text/javascript" src="rpg-dice-sandbox.js"></script>
+    <style type="text/css">
+      body {background-color: #ffffee;}
+      table { color: #800000; }
+      .rtd-m {max-width:1800px;padding-right:8px;background-color:#ffffee;}
+      .rtd {max-width:1800px;padding-right:8px;background-color:#f0e0d6;}
+      .row_caption { background-color: #ea8; }
+    </style>
+  </head>
+  <body onload='init();'>
+    <h1>SANDBOX</h1>
+    <table>
+      <tr>
+	<td class="row_caption"><b>Dice</b></td>
+	<td>
+	  <input id="rule_dice" type="text" size="28">
+	  <input type="submit" value="generate thread" onclick="gen_thread()">
+	</td>
+      </tr>
+      <tr><td class="row_caption"><b>Rules</b></td> 
+	<td><textarea id="rule_definition" cols="70" rows="8">
+	</textarea></td>
+      </tr>
+      <tr>
+	<td></dtd>
+	<td>
+	  <select id="rule_options"></select>
+	  <button onclick="save_user_rule();">save user rule</button>
+	  <button onclick="delete_user_rule();">delete user rule</button>
+	</td>
+      </tr>
+    <div id='ufm' style='display:none;'></div>
+    <table id="ftbl" style='display:none;'></table>
+  </body>
+</html>
