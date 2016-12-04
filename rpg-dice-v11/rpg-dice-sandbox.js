@@ -24,7 +24,7 @@ var DEFAULT_RULES = [
     }
     ,
     {dice_num: 5, dice_max: 20, rule:
-"char making\n" +
+"character making\n" +
 "#1 攻撃; #2 防御; #3 知性;\n" +
 "#4 戒律 6:善 12:悪 20:中立;\n" +
 "#5 種族 4:人間 8:エルフ 12:ドワーフ 16:ノーム 20:ホビット;\n"
@@ -184,6 +184,7 @@ function init(){
     if (localStorage["rule_index"])
 	var rule_index = Number(localStorage["rule_index"]);
 
+    select.value = rule_index;
     set_preset_rule(rule_index);
     gen_thread();
 }
