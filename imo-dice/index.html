@@ -7,56 +7,67 @@
 <h1> ImoDice </h1>
 <h2>ImoDice とは</h2>
 ImoDice はふたば★ちゃんねるのdice機能支援のためのbookmarkletで<a href="https://gangi-man.github.io/rpg-dice-v11/index.html">RPG dice</a> と互換があります。<br/>
-RPG Dice では本文/スレッドに書かなければならなかったルールをjpeg 画像の中に埋め込む事ができます。
+RPG Dice ではルールを本文/スレッドに書く必要がありましたが、ImoDice ではルールをjpeg 画像の中に埋め込む事ができます。
 
 <h2>導入方法</h2>
-ページ上部のImoDice のリンクをブラウザのブックマークバーにドラッグ＆ドロップする事でブラウザにインストールします。<br>
-dice 機能を使ったふたばのスレッドでインストールしたbookmarkをクリックすることで使用します。<br>
+ページ上部のImoDice のリンクをブラウザのブックマークバーにドラッグ＆ドロップする事でブラウザにインストールします。
 <div><img src="install.png"></div>
-スレッド内、もしくは画像の中にルールが埋め込まれている場合、そのルールにしたがって出目を整形し表示します。<br/>
+
+<h2>アンインストール</h2>
+ブックマークバーから削除することでアンインストールすることができます。
+
+<h2>使い方</h2>
+dice 機能を使ったスレッドでbookmarkletをクリックすることで使用します。<br>
+スレッド内もしくは画像の中にルールが埋め込まれている場合、そのルールにしたがって出目を整形し表示します。<br/>
 <br/>
-このようなスレッドが<br/>
-<img src="apply-before.png"/> </br/>
+このようなスレッドが
+<div><img src="apply-before.png"/></div>
 
-ImoDice を使うとこのように見えます。<br/>
-<img src="apply-after.png"/>
+↓ImoDice を使うとこのように見えます。
+<div><img src="apply-after.png"/></div>
 
-<h2>埋め込み方法</h2>
-ここではルールを画像に埋め込む方法について説明します。
-ImoDice ルール編集用のソフトは<a href="https://github.com/gangi-man/imo-dice/releases">以下から</a>ダウンロードできます。<br/>
-<img src="download.png"/>
+<hr>
 
-<h3>ImoDice のインストール・アンインストール方法</h3>
-インストールするには<a href="https://github.com/gangi-man/imo-dice/releases">ここ</a>から最新版のzip をダウンロードして展開し、適当なディレクトリに配置してください。
+<h1>ルールの埋め込み方法</h1>
+以下ではルールを画像に埋め込む方法について説明します。
+
+<h2>ImoDice のしくみ</h2>
+ImoDice はjpeg のコメントセグメント(not exif)にルールを埋め込んでいます。
+コメントセグメントを編集できるソフトならば(gimp等)ルールを埋め込むことができますが、以下にWindows platform 向けの<a href="https://github.com/gangi-man/imo-dice/releases">ImoDice 専用のエディタ</a>を用意しています。
+
+<h2>ImoDice (Editor) のインストール・アンインストール方法</h2>
+インストールするには<a href="https://github.com/gangi-man/imo-dice/releases">ここ</a>から最新版のzip をダウンロードして展開し、適当なディレクトリに配置してください。<br/>
 
 アンインストールは配置したディレクトリを削除すればよいです。
 
-<h3>ImoDice の起動</h3>
-ImoDice を起動するにはトップディレクトリにあるimo-dice.exe を実行します。
+<div><img src="download.png"/></div>
+
+<h2>ImoDice (Editor) の起動</h2>
+ImoDice (Editor) を起動するにはトップディレクトリにあるimo-dice.exe を実行します。
 このプログラムはelectron で作られています。
 
-<h3>画像の読み込み</h3>
+<h2>画像の読み込み</h2>
 OPEN ボタンを押してjpeg 画像を読み込みます。
-以下ではすでにルールが設定された SAMPLES\sample1.jpg を読み込みImoDice の利用方法を説明します。
+以下ではすでにルールが設定された SAMPLES\sample1.jpg を読み込むことでImoDice の利用方法を説明します。
 
-<h3>ルールタブ</h3>
+<h2>ルールタブ</h2>
 以下がルールタブです。ここでルールを設定していきます。
 出目-値リストがない場合は [ルール名:出目] と整形されます。
 
-<br/><img src="app-1.png"/>
+<div><img src="app-1.png"/></diiv>
 
-<h3>ルールタブ 出目-値リスト</h3>
+<h2>ルールタブ 出目-値リスト</h2>
 ルールタブの出目-値リストにチェックを入れるとリストが編集できるようになります。
-この場合ダイスの結果が 1-25 の場合は[剣] 26-50 は[槍] 51-75 は[棍] 76-100 は[鉄球] と整形されます。
+この例では第4ダイスの結果が 1-25 の場合は[剣] 26-50 なら[槍] 51-75 なら[棍] 76-100 なら[鉄球] と整形されます。
 
-<br/><img src="app-2.png"/>
+<div><img src="app-2.png"/></div>
 
-<h3>テスト</h3>
-作成したルールはテストボタンをクリックすることで試す事ができます。
+<h2>テスト</h2>
+作成したルールはTEST ボタンをクリックすることで試す事ができます。
 テストボタンを押すとImoDice は内部的にhttp サーバーを立ち上げ、テストコンテンツをブラウザで開きます。
 開かれたブラウザでブックマークレットを実行してルールが正しく動いているか確認してください。
 
-<h3>画像の保存</h3>
+<h2>画像の保存</h2>
 テストがうまくいったらSAVE ボタンで画像を保存します。
 
 
